@@ -26,17 +26,18 @@ function displayResult() {
   });
 
   let resultText = '';
-  if (totalPoints <= 9) {
-    resultText = "You're a T-Rex! Loud, Proud, and King of the Cretacious.";
-  } else if (totalPoints <= 12) {
-    resultText = "You're a Mosasaur! A fast swimmer and a .";
-  } else if (totalPoints <= 16) {
+  if (totalPoints <= 4) {
+    resultText = "You're a Velociraptor! Bold, powerful, and a pack hunter.";
+  } else if (totalPoints <= 8) {
     resultText = "You're an Triceratops! Graceful, wise, and in tune with nature.";
-  } else {
-    resultText = "You're a Velociraptor! Bold, powerful, and fiercely independent.";
+  } else if (totalPoints <= 12) {
+    resultText = "You're a Mosasaur! A fast swimmer and King of the Sea.";
+  } else if (totalPoints <= 16) {
+    resultText = "You're a T-Rex! Loud, Proud, and King of the Cretaceous.";
   }
 
-  document.getElementById('result-container').textContent = resultText;
+  document.getElementById('result-container').style.display = 'block';
+  document.getElementById('result-text').textContent = resultText;
 }
 
-document.getElementById('result-text').addEventListener('click', displayResult);
+document.getElementById('show-result').addEventListener('click', displayResult);
